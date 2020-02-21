@@ -10,7 +10,7 @@
 
 #if defined supportsWKWebView
 
-@implementation WKWebViewJavascriptBridge {
+@implementation WebViewJavascriptBridge {
     __weak WKWebView* _webView;
     __weak id<WKNavigationDelegate> _webViewDelegate;
     long _uniqueId;
@@ -23,7 +23,7 @@
 + (void)enableLogging { [WebViewJavascriptBridgeBase enableLogging]; }
 
 + (instancetype)bridgeForWebView:(WKWebView*)webView {
-    WKWebViewJavascriptBridge* bridge = [[self alloc] init];
+    WebViewJavascriptBridge* bridge = [[self alloc] init];
     [bridge _setupInstance:webView];
     [bridge reset];
     return bridge;

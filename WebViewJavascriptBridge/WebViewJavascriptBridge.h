@@ -1,5 +1,5 @@
 //
-//  WKWebViewJavascriptBridge.h
+//  WebViewJavascriptBridge.h
 //
 //  Created by @LokiMeyburg on 10/15/14.
 //  Copyright (c) 2014 @LokiMeyburg. All rights reserved.
@@ -15,7 +15,7 @@
 #import "WebViewJavascriptBridgeBase.h"
 #import <WebKit/WebKit.h>
 
-@interface WKWebViewJavascriptBridge : NSObject<WKNavigationDelegate, WebViewJavascriptBridgeBaseDelegate>
+@interface WebViewJavascriptBridge : NSObject<WKNavigationDelegate, WebViewJavascriptBridgeBaseDelegate>
 
 + (_Nonnull instancetype)bridgeForWebView:(WKWebView* _Nonnull)webView;
 + (void)enableLogging;
