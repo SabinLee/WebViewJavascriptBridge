@@ -1,16 +1,16 @@
 PODS:
-  - WebViewJavascriptBridge (6.0.3)
+  - WebViewJavascriptBridge_WebKit (7.0.0)
 
 DEPENDENCIES:
-  - WebViewJavascriptBridge (from `../..`)
+  - WebViewJavascriptBridge_WebKit (from `../..`)
 
 EXTERNAL SOURCES:
-  WebViewJavascriptBridge:
+  WebViewJavascriptBridge_WebKit:
     :path: "../.."
 
 SPEC CHECKSUMS:
-  WebViewJavascriptBridge: 545867706f03bef52ac902e90b0c0762a5451466
+  WebViewJavascriptBridge_WebKit: 8deb5d47f9b0ae8467725fe6b95d1e95542a1d5a
 
-PODFILE CHECKSUM: f657cfcc5a24b7c7f0c7781719b73d4a834bc276
+PODFILE CHECKSUM: a9c74709934428329349bb4babf997dda6652498
 
 COCOAPODS: 1.8.4

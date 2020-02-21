@@ -7,12 +7,12 @@ use_frameworks!
 target 'ExampleSwiftApp-iOS' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
 
-  pod 'WebViewJavascriptBridge', :path => '../..'
+  pod 'WebViewJavascriptBridge_WebKit', :path => '../..'
 
   target 'ExampleSwiftApp-iOSTests' do
     inherit! :search_paths
 
-	pod 'WebViewJavascriptBridge', :path => '../..'
+	pod 'WebViewJavascriptBridge_WebKit', :path => '../..'
   end
 
 end
