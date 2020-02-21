@@ -15,7 +15,6 @@ import WebViewJavascriptBridge
 let timeout: Double = 3
 
 class ExampleSwiftApp_iOSTests: XCTestCase {
-    var uiWebView: UIWebView = UIWebView.init()
     var wkWebView: WKWebView = WKWebView.init()
     var bridgeRefs: NSMutableArray = []
     
@@ -25,11 +24,7 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
         let rootVC = (UIApplication.shared.delegate as! AppDelegate).window!.rootViewController!
         var frame = rootVC.view.bounds
         frame.size.height /= 2
-        
-        uiWebView = UIWebView.init(frame: frame)
-        uiWebView.backgroundColor = UIColor.blue
-        rootVC.view.addSubview(uiWebView)
-        
+
         frame.origin.y += frame.size.height
         wkWebView = WKWebView.init(frame: frame)
         wkWebView.backgroundColor = UIColor.red
@@ -40,12 +35,11 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        uiWebView.removeFromSuperview()
         wkWebView.removeFromSuperview()
     }
     
-    func bridgeForWebView(_ webView: Any) -> WebViewJavascriptBridge {
-        let bridge = WebViewJavascriptBridge.init(webView)!
+    func bridgeForWebView(_ webView: WKWebView) -> WebViewJavascriptBridge {
+        let bridge = WebViewJavascriptBridge.init(for: webView)!
         bridgeRefs.add(bridge)
         return bridge
     }
@@ -60,7 +54,6 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     }
     
     func testSetup() {
-        _testSetup(webView: uiWebView)
         _testSetup(webView: wkWebView)
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -77,7 +70,6 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     
     
     func testEchoHandler() {
-        _testEchoHandler(uiWebView)
         _testEchoHandler(wkWebView)
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -94,7 +86,6 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     }
     
     func testEchoHandlerAfterSetup() {
-        _testEchoHandlerAfterSetup(uiWebView)
         _testEchoHandlerAfterSetup(wkWebView)
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -112,7 +103,6 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     }
     
     func testObjectEncoding() {
-        _testObjectEncoding(uiWebView)
         _testObjectEncoding(wkWebView)
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -140,7 +130,6 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     }
     
     func testJavascriptReceiveResponse() {
-        _testJavascriptReceiveResponse(uiWebView)
         _testJavascriptReceiveResponse(wkWebView)
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -159,7 +148,6 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     }
     
     func testJavascriptReceiveResponseWithoutSafetyTimeout() {
-        _testJavascriptReceiveResponseWithoutSafetyTimeout(uiWebView)
         _testJavascriptReceiveResponseWithoutSafetyTimeout(wkWebView)
         waitForExpectations(timeout: timeout, handler: nil)
     }
@@ -179,7 +167,6 @@ class ExampleSwiftApp_iOSTests: XCTestCase {
     }
     
     func testRemoveHandler() {
-        _testRemoveHandler(uiWebView)
         _testRemoveHandler(wkWebView)
         waitForExpectations(timeout: timeout, handler: nil)
     }
