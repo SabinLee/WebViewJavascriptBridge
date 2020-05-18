@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
-  s.name         = 'WebViewJavascriptBridge_WebKit'
-  s.version      = '7.0.1'
-  s.summary      = 'An iOS & OSX bridge for sending messages between Obj-C/Swift and JavaScript in WKWebViews & WebViews.'
+  s.name         = 'WebViewJavascriptBridge'
+  s.version      = '6.0.4'
+  s.summary      = 'WebViewJavascriptBridge修改版, 移除UIWebView相关API'
   s.homepage     = 'https://github.com/marcuswestin/WebViewJavascriptBridge'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
-  s.author       = { 'ncnk' => 'ncnk@foxmail.com' }
-  s.source       = { :git => 'https://github.com/ncnk/WebViewJavascriptBridge.git', :tag => 'v'+s.version.to_s }
+  s.author       = { 'LiXiebin' => '332349409@qq.com.com' }
+  s.source       = { :git => 'http://192.168.14.155/lxb/WebViewJavascriptBridge.git', :tag => 'v'+s.version.to_s }
   s.platforms    = { :ios => "8.0", :osx => "" }
   s.requires_arc = true
   
