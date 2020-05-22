@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'WebViewJavascriptBridge'
-  s.version      = '6.0.4'
+  s.version      = '6.0.5'
   s.summary      = 'WebViewJavascriptBridge修改版, 移除UIWebView相关API'
   s.homepage     = 'https://github.com/marcuswestin/WebViewJavascriptBridge'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
